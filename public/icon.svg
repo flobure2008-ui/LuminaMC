@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <defs>
+    <!-- Squircle Background Gradient -->
+    <radialGradient id="bgRadial" cx="50%" cy="22%" r="85%" fx="50%" fy="15%">
+      <stop offset="0%" stop-color="#192142" />
+      <stop offset="48%" stop-color="#0B0F22" />
+      <stop offset="100%" stop-color="#050711" />
+    </radialGradient>
+
+    <!-- Ambient Core Glow -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="48%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.58" />
+      <stop offset="45%" stop-color="#6366F1" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Squircle Outer Rim Gradient -->
+    <linearGradient id="rimGrad" x1="60" y1="20" x2="452" y2="492" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.75" />
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.65" />
+    </linearGradient>
+
+    <!-- Top Floating Isometric Diamond (Neon Cyan -> Emerald Aqua) -->
+    <linearGradient id="topPlate" x1="140" y1="96" x2="372" y2="236" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#67E8F9" />
+      <stop offset="50%" stop-color="#22D3EE" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <linearGradient id="topInner" x1="185" y1="125" x2="325" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ECFEFF" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.75" />
+    </linearGradient>
+
+    <!-- Left Isometric Facet (Electric Indigo -> Neon Violet) -->
+    <linearGradient id="leftPlate" x1="112" y1="204" x2="246" y2="424" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#818CF8" />
+      <stop offset="55%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#4338CA" />
+    </linearGradient>
+
+    <!-- Right Isometric Facet (Deep Cyber Cyan -> Royal Indigo) -->
+    <linearGradient id="rightPlate" x1="398" y1="204" x2="262" y2="424" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#312E81" />
+    </linearGradient>
+
+    <!-- Inner Glowing Energy Core -->
+    <linearGradient id="energyCore" x1="206" y1="206" x2="306" y2="306" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="55%" stop-color="#A5F3FC" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <!-- Drop Shadow Filter for 3D Floating Depth -->
+    <filter id="cubeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#02040A" flood-opacity="0.75" />
+      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#22D3EE" flood-opacity="0.24" />
+    </filter>
+
+    <filter id="coreBloom" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Modern Full-Bleed Squircle Base -->
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#bgRadial)" />
+  <rect x="18" y="18" width="476" height="476" rx="110" stroke="url(#rimGrad)" stroke-width="4" />
+
+  <!-- Subtle Inner Glass Highlight Arch -->
+  <path
+    d="M 128 20 H 384 C 444 20 492 68 492 128 V 180 C 410 120 335 96 256 96 C 177 96 102 120 20 180 V 128 C 20 68 68 20 128 20 Z"
+    fill="#FFFFFF"
+    fill-opacity="0.035"
+  />
+
+  <!-- Ambient Volumetric Backlight -->
+  <circle cx="256" cy="260" r="185" fill="url(#coreGlow)" />
+
+  <!-- Main Deconstructed 3D Isometric Voxel Emblem -->
+  <g filter="url(#cubeShadow)">
+    <!-- Inner Radiant Core Cube (Visible through the floating gap) -->
+    <polygon
+      points="256,192 322,230 256,268 190,230"
+      fill="url(#energyCore)"
+      filter="url(#coreBloom)"
+    />
+    <polygon
+      points="190,230 256,268 256,342 190,304"
+      fill="#38BDF8"
+      fill-opacity="0.88"
+    />
+    <polygon
+      points="322,230 256,268 256,342 322,304"
+      fill="#6366F1"
+      fill-opacity="0.88"
+    />
+
+    <!-- LEFT FLOATING GLASS VOXEL FACET -->
+    <path
+      d="M 114 198 L 244 273 L 244 426 L 126 358 C 118.5 353.5 114 345.5 114 336.5 Z"
+      fill="url(#leftPlate)"
+    />
+    <!-- Left Facet Cutout / Cyber Voxel Step -->
+    <polygon
+      points="146,246 216,286 216,374 146,334"
+      fill="#0B0F22"
+      fill-opacity="0.38"
+      stroke="#A5B4FC"
+      stroke-opacity="0.45"
+      stroke-width="2.5"
+    />
+    <!-- Left Facet Specular Glass Rim -->
+    <path
+      d="M 114 198 L 244 273 L 244 426"
+      stroke="#E0E7FF"
+      stroke-opacity="0.7"
+      stroke-width="3.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- RIGHT FLOATING GLASS VOXEL FACET -->
+    <path
+      d="M 398 198 L 268 273 L 268 426 L 386 358 C 393.5 353.5 398 345.5 398 336.5 Z"
+      fill="url(#rightPlate)"
+    />
+    <!-- Right Facet Cutout / Cyber Voxel Step -->
+    <polygon
+      points="366,246 296,286 296,374 366,334"
+      fill="#070A18"
+      fill-opacity="0.42"
+      stroke="#7DD3FC"
+      stroke-opacity="0.45"
+      stroke-width="2.5"
+    />
+    <!-- Right Facet Specular Glass Rim -->
+    <path
+      d="M 398 198 L 268 273 L 268 426"
+      stroke="#BAE6FD"
+      stroke-opacity="0.65"
+      stroke-width="3.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- TOP FLOATING ISOMETRIC CROWN PLATE -->
+    <path
+      d="M 246 88 C 252.2 84.4 259.8 84.4 266 88 L 392 161 L 256 240 L 120 161 Z"
+      fill="url(#topPlate)"
+    />
+    <!-- Top Inner Voxel Diamond -->
+    <polygon
+      points="256,118 338,165 256,212 174,165"
+      fill="url(#topInner)"
+    />
+    <!-- Top Center Pixel Core -->
+    <polygon
+      points="256,142 296,165 256,188 216,165"
+      fill="#0B0F22"
+      fill-opacity="0.28"
+    />
+    <!-- Top Specular Edge Highlight -->
+    <path
+      d="M 120 161 L 256 240 L 392 161"
+      stroke="#FFFFFF"
+      stroke-opacity="0.85"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <!-- Subtle Floating Energy Particles (Voxel Sparks) -->
+  <rect x="249" y="46" width="14" height="14" rx="4" transform="rotate(45 256 53)" fill="#67E8F9" fill-opacity="0.9" />
+  <rect x="82" y="138" width="10" height="10" rx="3" transform="rotate(45 87 143)" fill="#818CF8" fill-opacity="0.75" />
+  <rect x="420" y="138" width="10" height="10" rx="3" transform="rotate(45 425 143)" fill="#38BDF8" fill-opacity="0.75" />
+</svg>
